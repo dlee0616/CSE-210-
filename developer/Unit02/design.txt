@@ -1,0 +1,44 @@
+Classes we will use
+* Player
+    - int guess
+    - makeGuess()
+* Deck
+    - drawCard()
+    - List<card> cards
+* Card
+* Director (dealer)
+    - editPoints()
+        - addPoints()
+        - subPoints()
+    - askGuess()
+    - getGuess()
+
+What is a class?
+A class can have
+* objects
+* functions
+A class is a collection of objects and functions.
+
+What is an object
+* A real-world thing we represent using code. 
+
+examples
+* Car. It has attributes. 
+
+class Car {
+    string make
+    string model
+    int year
+
+    function drive(){
+
+    }
+    function stop () {
+        
+    }
+    function playMusic() {
+
+    }
+}
+
+* Method == function
