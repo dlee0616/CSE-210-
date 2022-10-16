@@ -45,13 +45,13 @@ namespace Hilo
                     return _score; 
                 }
                 // Prompt play again?
-                Console.WriteLine("Play again?");
+                Console.WriteLine("Play again?('Y/N')");
                 string answer = Console.ReadLine();
-                if (answer = true)
+                if (answer = "Y")
                 {
                 startGame();
                 }
-                else if (answer = false)
+                else if (answer = "N")
                 {
                     break;
                 }
