@@ -8,7 +8,7 @@ namespace Hilo
 {
     class player
     {
-       static void Main(string[] args)
+       static void Main()
         {
             Director director = new Director();
             director.startGame();
