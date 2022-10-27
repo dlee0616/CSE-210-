@@ -1,0 +1,6 @@
+Steps
+1. Determine indices of letters which were guessed correctly
+    i.e. if word is apple and the letter 'p' was guessed, then 
+    the indices 1 and 2 in the list of underscores will need to be
+    changed to 'p'
+2. Change values at those incides to the letter which was guessed

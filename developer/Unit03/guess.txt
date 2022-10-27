@@ -1,0 +1,5 @@
+guesses = [a, t, u, g, r, l]    basket of chars
+guess =          k              char
+item =           u              char   
+
+is guess == item?

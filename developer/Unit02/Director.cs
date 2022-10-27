@@ -23,7 +23,7 @@ namespace Hilo
             {
                 // Pull a card 
                 Random random = new Random();
-                int firstCard = random.Next(1,13);
+                int firstCard = _deck.Next(1,13);
                 //string _random = _deck[firstCard];
                 Console.WriteLine(string.Format("The card is : " + firstCard));
                 // Ask hi/lo
@@ -40,7 +40,8 @@ namespace Hilo
                     _score = _score + 100;
                     Console.WriteLine("Your score is :" + _score);
                 }
-                else if (playerGuess == "H" && nextCard < firstCard)
+
+                else if (playerGuess == "H" && nextCard < firstCard);
                 {
                     _score = _score - 75; 
                     Console.WriteLine("Your score is :" + _score);
