@@ -42,6 +42,7 @@ namespace Hilo
                 }
 
                 else if (playerGuess == "H" && nextCard < firstCard);
+
                 {
                     _score = _score - 75; 
                     Console.WriteLine("Your score is :" + _score);
