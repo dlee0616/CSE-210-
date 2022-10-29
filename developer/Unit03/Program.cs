@@ -34,15 +34,11 @@ namespace Jumper
                 Console.WriteLine("      /|\\");
                 Console.WriteLine("      / \\");
         }
-        static void match()
-        {   
-
-        }
         static void Main(string[] args)
         {
             //geerate word list
             
-        
+         
             var answerKey = new List<string> {"apple", "infiniti", "peanutbutter", "microsoft", "kimchi"};
             bool gameOver = false; 
             //pick random word 
@@ -95,7 +91,8 @@ namespace Jumper
         }
 
         // Ensure the guess matches a letter in the secret word
-        static bool checkGuess(char guess, string key) {
+        static bool checkGuess(char guess, string key) 
+        {
             // check if the guess was correct
             foreach(char item in key) {
                 if (guess == item){
@@ -105,8 +102,6 @@ namespace Jumper
             // Letter was not found in the secret word
             return false;
         }
-
-        // Ensure the letter which was guessed has not already been guessed
         static bool letterWasGuessed(char guess, List<char> guesses) {
             
             foreach(char item in guesses) {
@@ -118,4 +113,7 @@ namespace Jumper
             return true;
         }
     }
+     
+        
+    
 }
