@@ -9,7 +9,8 @@ namespace Jumper
 // namespace Jumper 
     public class process
     {
-       public List<string> answerKey;
+       private List<string> answerKey;
+       private string secretWord;
         //static void answer()
         //{
             //List <string> answerKey = new List<string> ();
@@ -69,7 +70,7 @@ namespace Jumper
                 bool alreadyGuessed = letterWasGuessed(guess, guessedLetters);
                 while (alreadyGuessed) {
                     Console.WriteLine("Letter already guessed! Guess again (a - z) ");
-                    guess = console.ReadLine();
+                    guess = Console.ReadLine();
                     // Check again if the input is valid. Continue to check as long as
                     // input is invalid
                     alreadyGuessed = letterWasGuessed(guess, guessedLetters);
