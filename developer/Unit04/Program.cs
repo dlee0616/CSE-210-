@@ -1,12 +1,42 @@
 ﻿using System;
+using Greed.Casting;
 
-namespace Unit04
+namespace Greed
 {
-    class Program
+    //parent class gem 
+    public class gem
     {
-        static void Main(string[] args)
+        // Declare global vars for gem
+        string _symbol;
+        // Constructor
+        public gem (string symbol)
         {
-            Console.WriteLine("Hello World!");
+            _symbol = symbol;
+        }
+
+        // Shoot the object in a random place
+        public void obstacle()
+        {
+            string _gem = "*";
+            // Console.WriteLine(_gem);
+        }
+    }
+
+    //child class rock
+    public class rock : gem
+    {
+        public string rockVar = "[ ]";
+    }
+
+    //class for game
+    public class Program 
+    {
+        public static void Main()
+        {
+            gem myGem = new gem("*");
+            rock fall = new rock();
+            fall.obstacle();
+            fall.obstacle(rock);
         }
     }
 }

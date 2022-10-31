@@ -51,7 +51,7 @@ namespace Unit04.Game.Directing
         {
             Actor robot = cast.GetFirstActor("robot");
             Point velocity = _keyboardService.GetDirection();
-            robot.SetVelocity(velocity);     
+            robot.SetVelocity(velocity);
         }
 
         /// <summary>

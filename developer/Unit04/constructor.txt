@@ -1,0 +1,27 @@
+Constuctor
+* Exists in many programming langauges
+* Defines the paramaters for class construction
+
+Examples:
+* Employee class
+    Member variables or properties (global variables for the class)
+    - employee_id
+    - salary
+    - position_title
+    - name
+    - age
+    - gender
+* Janitor : Employee
+    - hourly_wage
+    - cleaning_jobs
+* Salesman : Employee
+    - commission
+* Software Engineer : Employee
+    - languages_learned
+
+In C#:
+Employee employee1 = new Employee();
+
+
+Python:
+def __init__()
