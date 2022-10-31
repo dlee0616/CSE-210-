@@ -23,7 +23,7 @@ namespace Hilo
             {
                 // Pull a card 
                 Random random = new Random();
-                int firstCard = _deck.Next(1,13);
+                int firstCard = _deck[random.Next(_deck.Count)];
                 //string _random = _deck[firstCard];
                 Console.WriteLine(string.Format("The card is : " + firstCard));
                 // Ask hi/lo
@@ -31,7 +31,7 @@ namespace Hilo
                 string playerGuess = Console.ReadLine();
                 // Reveal next card
                 Random nextRandom = new Random();
-                int nextCard = nextRandom.Next(1,13);
+                int nextCard = _deck[nextRandom.Next(_deck.Count)];
                 //string nextCard = _deck[nextCard];
                 Console.WriteLine(string.Format("The new card was :" + nextCard));
                 // Edit points
