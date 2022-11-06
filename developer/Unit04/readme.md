@@ -1,1 +1,1 @@
-jumper is a game where the avatar needs to 
+jumper is a game where the avatar needs to move around and collect gems and avoid obstacles. Score reflect how many gems were collected and how many times the avatar hit obstacles 
