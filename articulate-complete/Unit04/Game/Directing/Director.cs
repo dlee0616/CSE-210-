@@ -13,6 +13,7 @@ namespace Unit04.Game.Directing
     /// </summary>
     public class Director
     {
+        // Global member variables
         private KeyboardService _keyboardService = null;
         private VideoService _videoService = null;
 

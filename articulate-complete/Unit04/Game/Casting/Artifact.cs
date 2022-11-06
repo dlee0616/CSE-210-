@@ -15,6 +15,7 @@ namespace Unit04.Game.Casting
         /// </summary>
         public Artifact()
         {
+            Artifact = "artifact";
         }
 
         /// <summary>
