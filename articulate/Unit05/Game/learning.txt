@@ -1,0 +1,30 @@
+Casting
+* Actor
+    - Food
+    - Score
+    - Snake
+    - Point
+    - Color
+* Cast
+
+Directing 
+* Director
+
+Scripting
+* Action
+    - Everything else in Scripting inherits from Action
+
+
+MoveActorsAction : Tradesman
+
+* Carpenters
+    - set of tools: cast and script. We get these tools from the director
+    - we're using the tools to move the actors around
+* Plumbers
+    - same set of tools, but for a different purpose: cast and script
+* Electricians
+* Stoneworkers
+
+* Cast is a group of actors
+* Each actor is a group of member variables and functions because an actor is an object!
+* An object is an instance or implementation of a class
