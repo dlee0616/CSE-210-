@@ -49,9 +49,35 @@ namespace Unit05.Game.Scripting
             {
                 _direction = new Point(0, Constants.CELL_SIZE);
             }
+        }
+        public void Execute(Cast cast, Script script)
+        {
+        // left
+        if (_keyboardService.IsKeyDown("j"))
+        {
+        _direction = new Point(-Constants.CELL_SIZE, 0);
+        }
 
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            snake.TurnHead(_direction);
+        // right
+        if (_keyboardService.IsKeyDown("l"))
+        {
+        _direction = new Point(Constants.CELL_SIZE, 0);
+        }
+
+        // up
+        if (_keyboardService.IsKeyDown("i"))
+        {
+        _direction = new Point(0, -Constants.CELL_SIZE);
+        }
+
+        // down
+        if (_keyboardService.IsKeyDown("k"))
+        {
+        _direction = new Point(0, Constants.CELL_SIZE);
+        }
+
+        Snake snake = (Snake)cast.GetFirstActor("snake");
+        snake.TurnHead(_direction);
 
         }
     }

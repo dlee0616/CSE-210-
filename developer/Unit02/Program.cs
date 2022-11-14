@@ -8,11 +8,73 @@ namespace Hilo
 {
     class player
     {
-       static void Main()
+        public void Main()
         {
-            Director director = new Director();
-            director.startGame();
+            // summon starting score
+            int _score = 300;
+            // call deck
+            New _deck = new Deck();
+
+            bool gameOver = false;
+            //begin game
+            while (!gameOver)
+            {
+                // Pull initial card 
+                Random random = new Random();
+                int firstCard = _deck[random.Next(_deck.Count)];
+                
+                // Reveal card
+                Console.WriteLine(string.Format("The card is : " + firstCard));
+                
+                // Ask hi/lo
+                Console.WriteLine("Higher or lower [H/L]");
+                string playerGuess = Console.ReadLine();
+                
+                // Reveal next card
+                Random NextRandom = new Random();
+                int nextCard = _deck[nextRandom.Next(_deck.Count)];
+                
+                //reveal next card
+                Console.WriteLine(string.Format("The new card was :" + nextCard));
+                
+                // update points
+                if (playerGuess == "H" && nextCard > firstCard)
+                {
+                    _score = _score + 100;
+                    Console.WriteLine("Your score is :" + _score);
+                }
+
+                else if (playerGuess == "H" && nextCard < firstCard);
+
+                {
+                    _score = _score - 75; 
+                    Console.WriteLine("Your score is :" + _score);
+                }
+                  
+                else if (playerGuess == "L" && nextCard < firstCard)
+                {
+                    _score = _score + 100;
+                    Console.WriteLine("Your score is :" + _score);
+                }
+                else if (playerGuess == "L" && nextCard > firstCard)
+                {
+                    _score = _score - 75; 
+                    Console.WriteLine("Your score is :" + _score);
+                }
+                else if (nextCard == firstCard)
+                {
+                    Console.WriteLine("Your cards were the same");
+                }
+                
+                // Prompt play again?
+                Console.WriteLine("Play again?('Y/N')");
+                string answer = Console.ReadLine();
+                
+                if (answer == "N")
+                {
+                    gameOver = true;
+                }
+            }
         }
     }
 }
-
