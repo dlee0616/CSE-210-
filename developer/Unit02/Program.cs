@@ -8,7 +8,7 @@ namespace Hilo
 {
     class player
     {
-        public void Main()
+        public void Main(string[] args)
         {
             // summon starting score
             int _score = 300;

@@ -4,10 +4,10 @@ namespace Jumper
 {
     class player
     {
-        static void director(string[] args)
+        static void Director()
         {
-            Director director = new Director();
-            director.execute();
+            Director Director = new Director();
+            Director.execute();
         }
     }
 }
