@@ -1,0 +1,11 @@
+A class is not an object; a class is a DESIGN of an object.
+An object is made by making an instance of that class; 
+in other words, implementing the design of the object.
+
+In other words,
+class = blueprint
+object = implementation of the blueprint
+
+Example: 
+* Snake.cs is the design of the Snake, but not an implementation of it
+* In order to make a snake, you have to create a new object in some other class, for example program.cs

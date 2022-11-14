@@ -1,0 +1,7 @@
+Things we learned about debugging Hilo program
+* Specify member varible in order to access it's data. Ex. _deck._cards[]
+* constructor doesnt have a return type 
+* Constructor must have same name with class to work 
+* Must have static main method to execute code
+* no need to repeat random function. Use original random 
+* the member variable must be declared outside of function to delcare it public and stay

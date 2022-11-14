@@ -6,14 +6,14 @@
 
 namespace Hilo
 {
-    class player
+    class Program
     {
-        public void Main(string[] args)
+        static void Main(string[] args)
         {
             // summon starting score
             int _score = 300;
             // call deck
-            New _deck = new Deck();
+            Deck _deck = new Deck();
 
             bool gameOver = false;
             //begin game
@@ -21,7 +21,8 @@ namespace Hilo
             {
                 // Pull initial card 
                 Random random = new Random();
-                int firstCard = _deck[random.Next(_deck.Count)];
+                int firstCard = _deck._cards[random.Next(_deck._cards.Count)];
+                // int firstCard = _deck[random.Next(_deck.Count)];
                 
                 // Reveal card
                 Console.WriteLine(string.Format("The card is : " + firstCard));
@@ -31,8 +32,7 @@ namespace Hilo
                 string playerGuess = Console.ReadLine();
                 
                 // Reveal next card
-                Random NextRandom = new Random();
-                int nextCard = _deck[nextRandom.Next(_deck.Count)];
+                int nextCard = _deck._cards[random.Next(_deck._cards.Count)];
                 
                 //reveal next card
                 Console.WriteLine(string.Format("The new card was :" + nextCard));
@@ -44,7 +44,7 @@ namespace Hilo
                     Console.WriteLine("Your score is :" + _score);
                 }
 
-                else if (playerGuess == "H" && nextCard < firstCard);
+                else if (playerGuess == "H" && nextCard < firstCard)
 
                 {
                     _score = _score - 75; 
