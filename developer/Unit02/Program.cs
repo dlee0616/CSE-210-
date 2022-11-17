@@ -8,6 +8,7 @@ namespace Hilo
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             // summon starting score

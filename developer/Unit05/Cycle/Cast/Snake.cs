@@ -15,9 +15,9 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake(int x, int y)
+        public Snake()
         {
-            PrepareBody(x, y);
+            PrepareBody();
         }
 
         /// <summary>
@@ -98,14 +98,28 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody(int spawnX, int spawnY)
+        private void PrepareBody()
         {
-            int x = spawnX; // Spawn x spot
-            int y = spawnY; // Spawn y spot
+            int startX = _segments.Count == 0 ? Constants.MAX_X : 0;
+            int startY = Constants.MAX_Y;
+            int x = Constants.MAX_X;// Spawn x spot
+            int y = Constants.MAX_Y; // Spawn y spot
+
+            /**
+                _______________________________________
+                |                                      |              
+                |                                  xxxx|
+                |                                      |
+                |                                      |
+                |                                      |
+                |xxxxx                                 |
+                _______________________________________
+
+            */
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
-                Point position = new Point(x - i * Constants.CELL_SIZE, y);
+                Point position = new Point(startX - i * Constants.CELL_SIZE, startY);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
                 Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
