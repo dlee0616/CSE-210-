@@ -1,5 +1,4 @@
 ﻿using System;
-using Unit05.Game;
 using Unit05.Game.Casting;
 using Unit05.Game.Directing;
 using Unit05.Game.Scripting;
@@ -10,17 +9,12 @@ namespace Unit05
     {
         static void Main(string[] args)
         {
+            //create actors
             Cast cast = new Cast();
-
-            // create actors
-            // create snake & score for snake instance #1
-            cast.AddActor("snake", new Snake(1));
-            cast.AddActor("score", new Score(1));
-            //cast.AddActor("prompt", new  )
-
-            // create snake & score for snake instance #2
-            cast.AddActor("secondSnake", new Snake(2));
-            cast.AddActor("secondScore", new Score(2));
+            cast.AddActor("snake", new Snake());
+            cast.AddActor("SecondSnake", new Snake());
+            cast.AddActor("SecondScore", new Score());
+            cast.AddActor("score", new Score());
 
             //create services 
             KeyboardService keyboardService = new KeyboardService();

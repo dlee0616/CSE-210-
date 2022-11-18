@@ -1,0 +1,11 @@
+Nov 18
+
+* display game over
+
+* Stop snakes from growing
+
+* Make BOTH snakes turn white when one of them collides
+
+Questions
+
+

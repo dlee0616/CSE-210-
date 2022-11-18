@@ -59,59 +59,18 @@ namespace Unit05.Game.Scripting
         /// Sets the game over flag if the snake collides with one of its segments.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
-
-        private Boolean GetIsCollision(Snake snake, Actor head) {
-            foreach (Actor segment in snake.GetBody())
-            {
-                if (head.GetPosition().Equals(segment.GetPosition()))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         private void HandleSegmentCollisions(Cast cast)
         {
-            // get snakes
             Snake snake = (Snake)cast.GetFirstActor("snake");
             Actor head = snake.GetHead();
+            List<Actor> body = snake.GetBody();
 
-            Snake snake2 = (Snake)cast.GetFirstActor("secondSnake");
-            Actor head2 = snake2.GetHead();
-            Score score;
-
-            if (GetIsCollision(snake, head2)) {
-                // snake 2 hit snake 1
-                _isGameOver = true;
-                score = (Score)cast.GetFirstActor("score");
-                score.AddPoints(1);                
-                // make everything white
-                foreach (Actor segment in snake.GetBody())
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
-                foreach (Actor segment in snake2.GetBody())
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
-               
-            } 
-
-            if (GetIsCollision(snake2, head))
+            foreach (Actor segment in body)
             {
-                // snake 1 hit snake 2
-                _isGameOver = true;
-                score = (Score)cast.GetFirstActor("secondScore");
-                score.AddPoints(1);
-                // make everything white
-                foreach (Actor segment in snake2.GetBody())
+                if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    segment.SetColor(Constants.WHITE);
-                }
-                foreach (Actor segment in snake.GetBody())
-                {
-                    segment.SetColor(Constants.WHITE);
+                    _isGameOver = true;
+                    
                 }
             }
         }
@@ -121,7 +80,8 @@ namespace Unit05.Game.Scripting
             if (_isGameOver == true)
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
-                // Food food = (Food)cast.GetFirstActor("food"); 
+                List<Actor> segments = snake.GetSegments();
+                //Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -131,7 +91,15 @@ namespace Unit05.Game.Scripting
                 Actor message = new Actor();
                 message.SetText("Game Over!");
                 message.SetPosition(position);
-                cast.AddActor("message", message);
+                cast.AddActor("messages", message);
+                
+
+                // make everything white
+                foreach (Actor segment in segments)
+                {
+                    segment.SetColor(Constants.WHITE);
+                }
+                
             }
         }
 

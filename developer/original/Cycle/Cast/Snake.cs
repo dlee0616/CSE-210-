@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unit05.Game.Scripting;
-using Unit05.Game.Services;
 
 namespace Unit05.Game.Casting
 {
@@ -13,15 +11,13 @@ namespace Unit05.Game.Casting
     public class Snake : Actor
     {
         private List<Actor> _segments = new List<Actor>();
-        private int _spacesMoved;
 
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake(int snakeIndex)
+        public Snake()
         {
-            PrepareBody(snakeIndex);
-            _spacesMoved = 0;
+            PrepareBody();
         }
 
         /// <summary>
@@ -69,24 +65,13 @@ namespace Unit05.Game.Casting
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
                 segment.SetColor(Constants.GREEN);
-                segment.SetColor(Constants.YELLOW);
                 _segments.Add(segment);
-            }
-        }
-
-        public void AutomaticGrowth() 
-        {
-            if (_spacesMoved % Constants.GROWTH_RATE == 0) {
-                GrowTail(1);
             }
         }
 
         /// <inheritdoc/>
         public override void MoveNext()
         {
-            _spacesMoved += 1;
-            AutomaticGrowth();
-
             foreach (Actor segment in _segments)
             {
                 segment.MoveNext();
@@ -110,23 +95,23 @@ namespace Unit05.Game.Casting
             _segments[0].SetVelocity(direction);
         }
 
-        private Point getStartPosition(int snakeIndex, int index) {
-            int startX = Constants.MAX_X / snakeIndex;
-            int startY = Constants.MAX_Y / snakeIndex;
-            return new Point(startX - index * Constants.CELL_SIZE, startY);
-        }
-
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody(int snakeIndex)
+        private void PrepareBody()
         {
+            int startX = _segments.Count == 0 ? Constants.MAX_X : 0;
+            int startY = Constants.MAX_Y;
+            int x = Constants.MAX_X;// Spawn x spot
+            int y = Constants.MAX_Y; // Spawn y spot
+
+
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
-                Point position = getStartPosition(snakeIndex, i);
+                Point position = new Point(startX - i * Constants.CELL_SIZE, startY);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.RED;
+                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);
@@ -136,7 +121,5 @@ namespace Unit05.Game.Casting
                 _segments.Add(segment);
             }
         }
-
-        //ublic void AddBody()
     }
 }

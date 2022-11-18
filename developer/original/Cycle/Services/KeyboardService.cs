@@ -13,7 +13,8 @@ namespace Unit05.Game.Services
     /// </summary>
     public class KeyboardService
     {
-        private Dictionary<string, KeyboardKey> _keys = new Dictionary<string, KeyboardKey>();
+        private Dictionary<string, KeyboardKey> _keys
+                = new Dictionary<string, KeyboardKey>();
 
         /// <summary>
         /// Constructs a new instance of KeyboardService using the given cell size.

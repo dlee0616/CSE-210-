@@ -16,10 +16,9 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of an Food.
         /// </summary>
-        public Score(int playerIndex)
+        public Score()
         {
             AddPoints(0);
-            this.SetPosition(getCanvasPosition(playerIndex));
         }
 
         /// <summary>
@@ -30,12 +29,6 @@ namespace Unit05.Game.Casting
         {
             this._points += points;
             SetText($"Score: {this._points}");
-        }
-
-        private static Point getCanvasPosition(int playerIndex) {
-            int x = playerIndex == 1 ? 0 : Constants.MAX_X - 75;
-            int y = Constants.MAX_Y;
-            return new Point(x, y);
         }
     }
 }

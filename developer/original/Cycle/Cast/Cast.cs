@@ -31,7 +31,6 @@ namespace Unit05.Game.Casting
         /// <param name="actor">The actor to add.</param>
         public void AddActor(string group, Actor actor)
         {
-            
             if (!_actors.ContainsKey(group))
             {
                 _actors[group] = new List<Actor>();
@@ -89,6 +88,18 @@ namespace Unit05.Game.Casting
             }
             return result;
         }
+        public Actor GetSecondActor(string group)
+        {
+            Actor result = null;
+            if (_actors.ContainsKey(group))
+            {
+                if (_actors[group].Count > 0)
+                {
+                    result = _actors[group][0];
+                }
+            }
+            return result;
+        }
 
         /// <summary>
         /// Removes the given actor from the given group.
@@ -102,6 +113,6 @@ namespace Unit05.Game.Casting
                 _actors[group].Remove(actor);
             }
         }
-        
+
     }
 }
