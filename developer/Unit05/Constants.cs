@@ -22,7 +22,7 @@ namespace Unit05.Game
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Snake";
         public static int SNAKE_LENGTH = 14;
-        public static int GROWTH_RATE = 30;
+        public static int GROWTH_RATE = 1;
 
         public static Color RED = new Color(255, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
