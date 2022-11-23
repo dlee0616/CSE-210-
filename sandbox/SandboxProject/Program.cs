@@ -9,12 +9,12 @@ namespace SandboxProject
         {
            Person info = new Person();
            
-           info.SetFirstName(firstName) = "Peter";
+           info.SetFirstName("Peter");
            
-           info.SetLastName(lastName) = "Lee";
-           
-           Console.WriteLine(info.firstName);  
-           Console.WriteLine(info.lastName);  
+           info.SetLastName("Lee");
+
+           Console.WriteLine(info.GetFirstName());  
+           Console.WriteLine(info.GetLastName());  
 
 
         }

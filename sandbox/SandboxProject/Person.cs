@@ -13,15 +13,15 @@ namespace SandboxProject
 
             public string lastName;
 
-            public void SetFirstName()
+            public void SetFirstName(string newName)
             {
-                _firstName = firstName;
+                _firstName = newName;
             }
             public string GetFirstName()
             {
                 return _firstName;
             }
-            public void SetLastName()
+            public void SetLastName(string lastName)
             {
                 _lastName = lastName;
             }
